@@ -1,7 +1,7 @@
 [package]
 name = "newtype_array"
 description = "A macro to help implementing the standard derived traits on newtype arrays"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
 license = "Apache-2.0/MIT"
 repository = "https://github.com/derekdreery/newtype_array-rs"

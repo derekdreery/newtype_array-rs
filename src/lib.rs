@@ -282,16 +282,22 @@ macro_rules! __array_impls {
 #[macro_export]
 macro_rules! newtype_array {
     (pub struct $name:ident(pub $size:expr)) => {
+        /// A newtype around an array. All traits are implemented as you would expect on the raw
+        /// array.
         #[derive(Copy, Clone)]
         pub struct $name<T>(pub [T; $size]);
         __array_impls!($name, $size);
     };
     (pub struct $name:ident($size:expr)) => {
+        /// A newtype around an array. All traits are implemented as you would expect on the raw
+        /// array.
         #[derive(Copy, Clone)]
         pub struct $name<T>([T; $size]);
         __array_impls!($name, $size);
     };
     (struct $name:ident($size:expr)) => {
+        /// A newtype around an array. All traits are implemented as you would expect on the raw
+        /// array.
         #[derive(Copy, Clone)]
         pub struct $name<T>([T; $size]);
         __array_impls!($name, $size);
