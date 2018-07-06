@@ -305,7 +305,7 @@ macro_rules! newtype_array {
         /// A newtype around an array. All traits are implemented as you would expect on the raw
         /// array.
         #[derive(Copy, Clone)]
-        pub struct $name<T>([T; $size]);
+        struct $name<T>([T; $size]);
         __array_impls!($name, $size);
     }
 }
