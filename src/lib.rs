@@ -276,6 +276,12 @@ macro_rules! __array_impls {
                 self.0
             }
         }
+
+        impl<T> AsRef<[T; $size]> for $name<T> {
+            fn as_ref(&self) -> &[T; $size] {
+                &self.0
+            }
+        }
     }
 }
 
