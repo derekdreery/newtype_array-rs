@@ -32,7 +32,7 @@
 // Lifted from rust/src/libcore/array.rs.
 
 #[doc(hidden)]
-#[macro_export]
+#[macro_export(local_inner_macros)]
 macro_rules! __impl_slice_eq1 {
     ($Lhs: ty, $Rhs: ty) => {
         __impl_slice_eq1! { $Lhs, $Rhs, Sized }
@@ -48,7 +48,7 @@ macro_rules! __impl_slice_eq1 {
 }
 
 #[doc(hidden)]
-#[macro_export]
+#[macro_export(local_inner_macros)]
 macro_rules! __impl_slice_eq2 {
     ($Lhs: ty, $Rhs: ty) => {
         __impl_slice_eq2! { $Lhs, $Rhs, Sized }
@@ -67,7 +67,7 @@ macro_rules! __impl_slice_eq2 {
 
 #[doc(hidden)]
 // macro for implementing n-element array functions and operations
-#[macro_export]
+#[macro_export(local_inner_macros)]
 macro_rules! __array_impls {
     ($name:ident, $size:expr) => {
         impl<T> AsRef<[T]> for $name<T> {
@@ -285,7 +285,7 @@ macro_rules! __array_impls {
     }
 }
 
-#[macro_export]
+#[macro_export(local_inner_macros)]
 macro_rules! newtype_array {
     (pub struct $name:ident(pub $size:expr)) => {
         /// A newtype around an array. All traits are implemented as you would expect on the raw
