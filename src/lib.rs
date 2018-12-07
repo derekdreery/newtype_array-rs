@@ -282,6 +282,12 @@ macro_rules! __array_impls {
                 &self.0
             }
         }
+
+        impl<T: Default + Copy> Default for $name<T> {
+            fn default() -> Self {
+                $name([T::default(); $size])
+            }
+        }
     }
 }
 
@@ -329,5 +335,9 @@ mod tests {
         // `Hash` is implemented as well
         let mut map = HashMap::new();
         map.insert(arr1, "hello");
+
+        // Check 'Default'
+        let dflt: Array48<u32> = Array48::default();
+        assert_eq!(dflt[0], 0);
     }
 }
